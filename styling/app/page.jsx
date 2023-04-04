@@ -1,15 +1,9 @@
-"use client"
-import styled from "styled-components"
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: red;
-`
+import styles from "./homepage.module.scss"
 
 function HomePage() {
   return (
-    <div className="container mx-auto">
-      <Title>Hello World</Title>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Home Page</h1>
     </div>
   )
 }
