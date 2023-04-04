@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: falseg,
+  reactStrictMode: false,
   experimental: {
     appDir: true,
   },
