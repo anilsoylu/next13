@@ -1,4 +1,5 @@
 import React from "react"
+import Test from "../components/test"
 
 export const getData = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts/1")
@@ -13,10 +14,14 @@ export async function generateMetadata() {
   }
 }
 
-export function HomePage() {
-  const data = getData()
-  console.log(data)
-  return <div>Data Fetching</div>
+async function HomePage() {
+  const data = await getData()
+  return (
+    <>
+      <h1>Data Fetching: {data.title}</h1>
+      <Test />
+    </>
+  )
 }
 
 export default HomePage
