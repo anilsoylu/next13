@@ -7,8 +7,7 @@ function HomePage() {
   // const router = useRouter()
   const [value, setValue] = useState("")
 
-  const onSubmit = (e) => {
-    e.preventDefault()
+  const onSubmit = () => {
     // router.replace(`/test=${value}`)
     setValue("")
   }
@@ -21,7 +20,9 @@ function HomePage() {
         placeholder="Search someting..."
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={onSubmit}>Search</button>
+      <button onClick={onSubmit} name="Submit">
+        Search
+      </button>
       <Link href="./about">Go About...</Link>
     </div>
   )

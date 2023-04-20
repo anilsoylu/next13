@@ -19,4 +19,17 @@ describe("Homepage", () => {
 
     expect(inputElement).toHaveValue("Hey there")
   })
+
+  it("should submit when submit button is clicked", async () => {
+    render(<Homepage />)
+
+    const inputElement = screen.getByPlaceholderText(/search some/i)
+    await userEvent.type(inputElement, "Hey there")
+    expect(inputElement).toHaveValue("Hey there")
+
+    const buttonElement = screen.getByRole("button")
+    await userEvent.click(buttonElement)
+
+    expect(inputElement).toHaveValue("")
+  })
 })
