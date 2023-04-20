@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import Homepage from "./page"
+import { mockReplace } from "../jest.setup"
 
 describe("Homepage", () => {
   it("should render the homepage", () => {
@@ -30,6 +31,8 @@ describe("Homepage", () => {
     const buttonElement = screen.getByRole("button")
     await userEvent.click(buttonElement)
 
+    expect(mockReplace).toHaveBeenCalledTimes(1)
+    expect(mockReplace).toHaveBeenCalledWith("/test=Hey there")
     expect(inputElement).toHaveValue("")
   })
 })
