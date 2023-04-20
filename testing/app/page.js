@@ -23,7 +23,7 @@ function HomePage() {
       <button onClick={onSubmit} name="Submit">
         Search
       </button>
-      <Link href="./about">Go About...</Link>
+      <Link href="/about">Go About...</Link>
     </div>
   )
 }

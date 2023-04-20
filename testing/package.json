@@ -7,14 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "cypress": "cypress open",
+    "e2e": "start-server-and-test start http://localhost:3000 \"cypress open --e2e\"",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 \"cypress run --e2e\"",
+    "component": "cypress open --component",
+    "component:headless": "cypress run --component"
   },
   "dependencies": {
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "start-server-and-test": "^2.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
